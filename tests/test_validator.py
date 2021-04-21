@@ -1,7 +1,5 @@
 import unittest
-
 from classes.validator import Validator
-
 
 class TestValidator(unittest.TestCase):
 
@@ -36,6 +34,16 @@ class TestValidator(unittest.TestCase):
         result = self.validator.username_is_valid(username)
 
         # Assert
+        self.assertFalse(result)
+        
+    def reject_special_char(self):
+        #Assume
+        username = 'R$ve@l'
+        
+        #Action
+        result = self.validator.username_is_valid(username)
+        
+        #Assert
         self.assertFalse(result)
 
     def test_it_will_accept_a_valid_username(self):

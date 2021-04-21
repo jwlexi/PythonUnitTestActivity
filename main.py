@@ -1,5 +1,4 @@
-from classes.validator import Validator
-
+from classes.validator import validator
 username = 'Reval'
 validator = Validator()
 if validator.username_is_valid(username):
